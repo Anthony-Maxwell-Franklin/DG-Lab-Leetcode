@@ -115,7 +115,7 @@ function calculateStrengthIncrease(elapsed) {
     }
     
     // 确保增长不会超过上限
-    return Math.min(Math.round(increase), 100);
+    return Math.min(Math.round(increase), MAX_STRENGTH);
 }
 
 // 修改 startStrengthIncrease 函数

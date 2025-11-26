@@ -9,6 +9,7 @@
 // 强度增长相关
 const STRENGTH_INCREASE_INTERVAL = 30000;  // 每30秒增加一次强度
 const STRENGTH_INCREASE_AMOUNT = 2;        // 每次增加2点强度
+const MAX_STRENGTH = 200;                // 最大强度值
 const UPDATE_THROTTLE = 500; // 500ms内只更新一次
 
 // 惩罚消息
@@ -79,7 +80,7 @@ const PASS_PERCENTAGE_CONFIG = {
     90: { threshold: 90, adjustStrength: -10, message: 'excellent' },
     80: { threshold: 80, adjustStrength: 5, message: 'good' },
     70: { threshold: 70, adjustStrength: 10, message: 'fair' },
-    60: { threshold: 60, adjustStrength: 20, message: 'medium' },
+    60: { threshold: 60, adjustStrength: 100, message: 'medium' },
     50: { threshold: 50, adjustStrength: 30, message: 'bad' },
     40: { threshold: 40, adjustStrength: 50, message: 'poor' },
     30: { threshold: 30, adjustStrength: 100, message: 'failed' },

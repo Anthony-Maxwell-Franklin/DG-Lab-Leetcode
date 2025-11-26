@@ -22,8 +22,8 @@ let isPulsing = false;
 // 添加一个直接设置强度的函数
 function setStrength(strengthA, strengthB) {
     // 确保不超过软上限
-    channelStrength.A = Math.min(strengthA, softLimits.A || 100);
-    channelStrength.B = Math.min(strengthB, softLimits.B || 100);
+    channelStrength.A = Math.min(strengthA, softLimits.A || MAX_STRENGTH);
+    channelStrength.B = Math.min(strengthB, softLimits.B || MAX_STRENGTH);
 
     // 发送新的强度设置
     const strengthMsgA = {
@@ -419,8 +419,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 function adjustStrength(amount) {
     if (amount > 0) {
         // 增加强度，但不超过软上限
-        channelStrength.A = Math.min(channelStrength.A + amount, softLimits.A || 100);
-        channelStrength.B = Math.min(channelStrength.B + amount, softLimits.B || 100);
+        channelStrength.A = Math.min(channelStrength.A + amount, softLimits.A || MAX_STRENGTH);
+        channelStrength.B = Math.min(channelStrength.B + amount, softLimits.B || MAX_STRENGTH);
     } else {
         // 减少强度
         channelStrength.A = Math.max(channelStrength.A + amount, 0);
