@@ -56,26 +56,16 @@ function adjustStrengthByPassPercentage(totalTestcases, totalCorrect) {
     });
 
     let config = null;
-    if (passPercentage >= PASS_PERCENTAGE_CONFIG[100].threshold) {
-        config = PASS_PERCENTAGE_CONFIG[100];
-    } else if (passPercentage >= PASS_PERCENTAGE_CONFIG[90].threshold) {
-        config = PASS_PERCENTAGE_CONFIG[90];
-    } else if (passPercentage >= PASS_PERCENTAGE_CONFIG[80].threshold) {
-        config = PASS_PERCENTAGE_CONFIG[80];
-    } else if (passPercentage >= PASS_PERCENTAGE_CONFIG[70].threshold) {
-        config = PASS_PERCENTAGE_CONFIG[70];
-    } else if (passPercentage >= PASS_PERCENTAGE_CONFIG[60].threshold) {
-        config = PASS_PERCENTAGE_CONFIG[60];
-    } else if (passPercentage >= PASS_PERCENTAGE_CONFIG[50].threshold) {
-        config = PASS_PERCENTAGE_CONFIG[50];
-    } else if (passPercentage >= PASS_PERCENTAGE_CONFIG[40].threshold) {
-        config = PASS_PERCENTAGE_CONFIG[40];
-    } else if (passPercentage >= PASS_PERCENTAGE_CONFIG[30].threshold) {
-        config = PASS_PERCENTAGE_CONFIG[30];
-    } else if (passPercentage >= PASS_PERCENTAGE_CONFIG[20].threshold) {
-        config = PASS_PERCENTAGE_CONFIG[20];
+    if (passPercentage >= PASS_PERCENTAGE_CONFIG[0].threshold) {
+        config = PASS_PERCENTAGE_CONFIG[0];
+    } else if (passPercentage >= PASS_PERCENTAGE_CONFIG[1].threshold) {
+        config = PASS_PERCENTAGE_CONFIG[1];
+    } else if (passPercentage >= PASS_PERCENTAGE_CONFIG[2].threshold) {
+        config = PASS_PERCENTAGE_CONFIG[2];
+    } else if (passPercentage >= PASS_PERCENTAGE_CONFIG[3].threshold) {
+        config = PASS_PERCENTAGE_CONFIG[3];
     } else {
-        config = PASS_PERCENTAGE_CONFIG[10];
+        config = PASS_PERCENTAGE_CONFIG[4];
     }
 
     console.log('[Background] 根据通过百分比调整强度:', {

@@ -7,8 +7,8 @@
 // ============================================
 
 // 强度增长相关
-const STRENGTH_INCREASE_INTERVAL = 30000;  // 每30秒增加一次强度
-const STRENGTH_INCREASE_AMOUNT = 2;        // 每次增加2点强度
+const STRENGTH_INCREASE_INTERVAL = 20000;  // 每30秒增加一次强度
+const STRENGTH_INCREASE_AMOUNT = 1;        // 每次增加1点强度
 const MAX_STRENGTH = 200;                // 最大强度值
 const UPDATE_THROTTLE = 500; // 500ms内只更新一次
 
@@ -75,18 +75,13 @@ const MESSAGE_HISTORY = {
 const MAX_PUNISHMENT_LEVEL = 5;
 
 // 根据通过百分比的强度配置
-const PASS_PERCENTAGE_CONFIG = {
-    100: { threshold: 100, adjustStrength: -20, message: 'perfect' },
-    90: { threshold: 90, adjustStrength: -10, message: 'excellent' },
-    80: { threshold: 80, adjustStrength: 5, message: 'good' },
-    70: { threshold: 70, adjustStrength: 10, message: 'fair' },
-    60: { threshold: 60, adjustStrength: 100, message: 'medium' },
-    50: { threshold: 50, adjustStrength: 30, message: 'bad' },
-    40: { threshold: 40, adjustStrength: 50, message: 'poor' },
-    30: { threshold: 30, adjustStrength: 100, message: 'failed' },
-    20: { threshold: 20, adjustStrength: 150, message: 'failed' },
-    10: { threshold: 10, adjustStrength: 200, message: 'failed' }
-};
+const PASS_PERCENTAGE_CONFIG = [
+    { threshold: 100, adjustStrength: -50, message: 'perfect' },
+    { threshold: 80, adjustStrength: -5, message: 'good' },
+    { threshold: 60, adjustStrength: 10, message: 'fair' },
+    { threshold: 40, adjustStrength: 30, message: 'poor' },
+    { threshold: 20, adjustStrength: 50, message: 'failed' },
+];
 
 // 惩罚配置表
 const PUNISHMENT_CONFIGS = [
@@ -94,7 +89,7 @@ const PUNISHMENT_CONFIGS = [
     { strength: 35, duration: 5, wave: "1" },    // 级别 2: 5秒
     { strength: 50, duration: 8, wave: "2" },    // 级别 3: 8秒
     { strength: 65, duration: 10, wave: "2" },   // 级别 4: 10秒
-    { strength: 80, duration: 15, wave: "3" }    // 级别 5: 15秒
+    { strength: 80, duration: 15, wave: "3" },    // 级别 5: 15秒
 ];
 
 // 波形数据
